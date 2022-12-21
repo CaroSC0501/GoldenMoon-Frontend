@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import { API_URL } from "../../util/Util";
 
-export const Register = () => {
+export const Mregister = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -43,64 +43,51 @@ export const Register = () => {
     <div className="container">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicName">
-          <Form.Label>Nombres</Form.Label>
+          <Form.Label>Nombre</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Nombres"
-            name="name"
+            placeholder="Nombre de la pelicula"
+            name="MovieName"
             onChange={handleChange}
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicLastName">
-          <Form.Label>Apellidos</Form.Label>
+          <Form.Label>Reparto</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Apellidos"
-            name="lastName"
+            placeholder="Reparto"
+            name="staff"
             onChange={handleChange}
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicBirhtDate">
-          <Form.Label>Fecha de nacimiento</Form.Label>
+          <Form.Label>descripción</Form.Label>
           <Form.Control
-            type="date"
-            placeholder="Fecha de nacimiento"
-            name="birthDate"
+            type="text"
+            placeholder="Descripción de la pelicula"
+            name="descripcion"
             onChange={handleChange}
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPhone">
-          <Form.Label>Celular</Form.Label>
+          <Form.Label>Imagen</Form.Label>
           <Form.Control
-            type="number"
-            placeholder="Teléfono de contacto"
-            name="phone"
+            type="App-link"
+            placeholder="Link de la imagen"
+            name="image"
             onChange={handleChange}
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
+        <Form.Group className="mb-3" controlId="formBasicPhone">
+          <Form.Label>Trailer</Form.Label>
           <Form.Control
-            type="email"
-            placeholder="Enter email"
-            name="email"
-            onChange={handleChange}
-          />
-          <Form.Text className="text-muted">
-            No compartiremos el email con nadie más
-          </Form.Text>
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Contraseña</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Registra tu contraseña"
-            name="password"
+            type="App-link"
+            placeholder="Link del trailer"
+            name="Trailer"
             onChange={handleChange}
           />
         </Form.Group>
@@ -109,7 +96,6 @@ export const Register = () => {
           Submit
         </Button>
       </Form>
-      <Link to="/">Ya tengo una cuenta</Link>
     </div>
   );
 };

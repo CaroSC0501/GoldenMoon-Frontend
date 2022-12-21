@@ -10,18 +10,21 @@ import { Login } from "./components/login/Login";
 import { Movie } from "./components/movie/Movie";
 import { NotFound } from "./components/notFound/NotFound";
 import { Register } from "./components/register/Register";
-import { Sidebar } from "./components/sidebar/Sidebar";
+import { TopMenu } from "./components/menu/TopMenu";
+import { Mregister } from "./components/movieRegister/Mregister";
+//import { Sidebar } from "./components/sidebar/Sidebar";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Header />
-        <Sidebar />
+        <TopMenu />
         <Routes>
-          <Route path="/category/:name" element={<Category />} />
+          <Route path="/category" element={<Category />} />
           <Route path="/movie/:id" element={<Movie />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/movieRegister" element={<Mregister />} />
           <Route path="/movies" element={<Content />} />
           <Route path="/" element={<Login />} />
           <Route path="*" element={<NotFound />} />

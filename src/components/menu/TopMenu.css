@@ -1,25 +1,8 @@
-/* div.scrollmenu {
-    background-color: #333;
-    overflow: auto;
-    white-space: nowrap;
-  }
-  
-  div.scrollmenu a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-  }
-  
-  div.scrollmenu a:hover {
-    background-color: #777;
-  }
 
-  
 .navbar {
   overflow: hidden;
-  background-color: #333; 
+  background-color: #273746; 
+  color: #273746;
 }
 
 .navbar a {
@@ -48,14 +31,14 @@
 }
 
 .navbar a:hover, .subnav:hover .subnavbtn {
-  background-color: red;
+  background-color: #7E5109;
 }
 
 .subnav-content {
   display: none;
   position: absolute;
   left: 0;
-  background-color: red;
+  background-color: #7E5109;
   width: 100%;
   z-index: 1;
 }
@@ -73,4 +56,5 @@
 
 .subnav:hover .subnav-content {
   display: block;
-} */
+}
+

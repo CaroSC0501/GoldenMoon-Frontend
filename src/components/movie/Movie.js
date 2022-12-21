@@ -1,12 +1,12 @@
 import Toast from "react-bootstrap/Toast";
-
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Movie.css";
 import { API_URL, getToken } from "../../util/Util";
 import Swal from "sweetalert2";
 
-export const Movie = () => {
+export const Movie = ({ id, name, description, image, staffList }) => {
   const params = useParams();
   const [movieId, setMovieId] = useState("");
   const [movie, setMovie] = useState({});
@@ -100,37 +100,22 @@ export const Movie = () => {
     await sendScoreApi(value);
   };
 
-  const message = () => (
-    <Toast>
-      <Toast.Header>
-        <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-        <strong className="me-auto">Bootstrap</strong>
-        <small>11 mins ago</small>
-      </Toast.Header>
-      <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
-    </Toast>
-  );
-
-  return (
+ return (
     <div className="movie-container">
       <iframe
         id="myVideo"
         width="560"
-        height="515"
-        src={
-          !movie.trailerLink
-            ? "https://www.youtube.com/embed/4Lp-Vc4i2QI"
-            : movie.trailerLink
-        }
+        height="520"
+        src="https://www.youtube.com/embed/RZq-5A8Zo-o"
         title={movie.name}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        frameBorder="0"   
         allowFullScreen
       ></iframe>
+
       <div className="main-container">
         <div className="content">
-          <h1>{movie.name}</h1>
-          <p>{movie.description}</p>
+          <h1>Maleficio</h1>
+          <p>Tres amigos que desmontan mitos sobrenaturales viven un extraño incidente durante la visita a una secta. Ahora, la superviviente debe salvar a su hija de una maldición.</p>
           <div className="staff-list">
             {movie.staffList && movie.staffList.length > 0
               ? movie.staffList.map((staff, idx) => (
@@ -138,17 +123,9 @@ export const Movie = () => {
                     {staff.name} {staff.lastName} ({staff.rol})
                   </p>
                 ))
-              : "No hay elenco definido"}
+              : "Ken-Yan Tsai (Ruo-nan) Kao Yin-Hsuan Sean Lin Ching-Yu Wen"}
           </div>
-          <div className="category-list">
-            {movie.categories && movie.categories.length > 0
-              ? movie.categories.map((staff, idx) => (
-                  <p key={idx}>
-                    {staff.name} {staff.lastName} {staff.rol}
-                  </p>
-                ))
-              : "No hay categorías definidas"}
-          </div>
+
           <div className="rate">
             <p>Calificar pelicula</p>
             <select value={scoreSelected} onChange={sendScore}>
@@ -161,5 +138,7 @@ export const Movie = () => {
         </div>
       </div>
     </div>
-  );
+
+
+);
 };

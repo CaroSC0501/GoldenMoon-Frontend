@@ -79,4 +79,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-l
-	RewriteRule . /index.html [L]
+	RewriteRule . /index.html [L]# GoldenMoon-Frontend

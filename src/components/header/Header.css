@@ -1,7 +1,26 @@
 .logo{
-    width: 100px;
+    width: 150px;
 }
 
 .text-center{
     justify-content: center;
+}
+
+.backgroundColor{
+    color: #273746;
+}
+
+.bloque{
+    color: #7E5109;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.font-family{
+    font-family: bold;
+}
+
+.font-size{
+    font-size: 50px;
 }
